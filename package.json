@@ -1,0 +1,9 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "This template provides a setup for Node.js development",
+  "main": "index.js",
+  "devDependencies": {
+    "git-commit-msg-linter": "^5.0.6"
+  }
+}
