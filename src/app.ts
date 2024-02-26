@@ -1,3 +1,3 @@
-import { sum } from "./utils";
+import { sum } from './utils'
 
 console.log(sum(1, 2))
