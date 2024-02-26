@@ -3,7 +3,15 @@
   "version": "1.0.0",
   "description": "This template provides a setup for Node.js development",
   "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "ts-node src/app.ts",
+    "dev": "nodemon -e ts,json --exec npm start"
+  },
   "devDependencies": {
-    "git-commit-msg-linter": "^5.0.6"
+    "@types/node": "^20.11.20",
+    "git-commit-msg-linter": "^5.0.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   }
 }
