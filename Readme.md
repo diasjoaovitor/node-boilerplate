@@ -2,6 +2,12 @@
 
 This template provides a setup for [Node.js](https://nodejs.org/en) development
 
+How to use:
+
+```
+npx degit https://github.com/diasjoaovitor/node-boilerplate your-project
+```
+
 ## Step by Step
 
 create project
