@@ -35,11 +35,16 @@ create `tsconfig.json`
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "ESNext",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "strict": true
+    "strict": true,
+    "outDir": "dist",
+    "removeComments": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "src"
   },
   "ts-node": {
     "esm": true,
@@ -84,7 +89,7 @@ execute
 
 ```
 npm start
-npm dev
+npm run dev
 ```
 
 configure tests
@@ -254,6 +259,17 @@ edit `.husky/pre-commit.sh`
 npx --no-install lint-staged
 ```
 
+create build scripts
+
+```json
+{
+  "scripts": {
+    "build": "tsc --build",
+    "start:prod": "node dist/src/app.js"
+  }
+}
+```
+
 configure ci
 
 create `.github/workflows/ci.yml`
@@ -276,16 +292,16 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm
+        run: npm i
 
       - name: Linting
-        run: npm lint
+        run: npm run lint
 
       - name: Testing
-        run: npm test:ci
+        run: npm run test:ci
 
       - name: Build
-        run: npm build
+        run: npm run build
 ```
 
 configure `dotenv`
