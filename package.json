@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "This template provides a setup for Node.js development",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "start": "ts-node src/app.ts",
     "dev": "nodemon -e ts,json --exec npm start",
+    "build": "tsc --build",
+    "start:prod": "node dist/src/app.js",
     "test": "jest --maxWorkers=50%",
     "test:watch": "jest --watch --maxWorkers=25%",
     "test:ci": "jest --runInBand",
