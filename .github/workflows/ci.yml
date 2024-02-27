@@ -15,13 +15,13 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm
+        run: npm i
 
       - name: Linting
-        run: npm lint
+        run: npm run lint
 
       - name: Testing
-        run: npm test:ci
+        run: npm run test:ci
 
       - name: Build
-        run: npm build
+        run: npm run build
