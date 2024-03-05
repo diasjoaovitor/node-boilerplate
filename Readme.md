@@ -202,7 +202,13 @@ module.exports = {
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
   rules: {
-    '@typescript-eslint/explicit-function-return-type': 'off'
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/consistent-type-definitions': 'off',
+    '@typescript-eslint/no-unnecessary-type-assertion': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
+    '@typescript-eslint/strict-boolean-expressions': 'off',
+    '@typescript-eslint/prefer-nullish-coalescing': 'off',
+    '@typescript-eslint/no-unsafe-argument': 'off'
   }
 }
 ```
@@ -266,6 +272,45 @@ create build scripts
   "scripts": {
     "build": "tsc --build",
     "start:prod": "node dist/src/app.js"
+  }
+}
+```
+
+configure alias
+
+```
+npm i module-alias
+npm i -D @types/module-alias
+```
+
+create `src/config/alias-config.ts`
+
+```ts
+import { addAlias } from 'module-alias'
+import { resolve } from 'path'
+
+addAlias('@', resolve('src'))
+```
+
+add path in `tsconfig.json`
+
+```json
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["*"]
+    }
+  }
+}
+```
+
+add mappers in `jest.config.ts`
+
+```ts
+{
+  modulePaths: ['<rootDir>/src/'],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1'
   }
 }
 ```
