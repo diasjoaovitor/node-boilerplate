@@ -10,7 +10,7 @@ npx degit https://github.com/diasjoaovitor/node-boilerplate your-project
 
 ## Step by Step
 
-create project
+### create project
 
 ```
 mkdir node-boilerplate
@@ -23,7 +23,7 @@ git init
 npm i -D git-commit-msg-linter
 ```
 
-config typescript and nodemon
+### configure typescript and nodemon
 
 ```
 npm i -D typescript ts-node @types/node nodemon
@@ -92,7 +92,7 @@ npm start
 npm run dev
 ```
 
-configure tests
+### configure tests
 
 ```
 npm i -D @types/jest jest ts-jest
@@ -138,6 +138,8 @@ run test
 npm test sum.test.ts
 ´´´
 
+### configure editor
+
 create `.editorconfig`
 
 ```yml
@@ -152,7 +154,7 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 ```
 
-configure linter
+### configure linter
 
 install **Prettier - Code formatter** and **ESLint** extension in your VSCode
 
@@ -183,7 +185,7 @@ create `.vscode/settings.json`
 }
 ```
 
-config eslint
+configure eslint
 
 ```
 npm i -D eslint eslint-config-prettier @typescript-eslint/eslint-plugin eslint-config-standard-with-typescript eslint-plugin-n eslint-plugin-import eslint-plugin-promise
@@ -265,18 +267,7 @@ edit `.husky/pre-commit.sh`
 npx --no-install lint-staged
 ```
 
-create build scripts
-
-```json
-{
-  "scripts": {
-    "build": "tsc --build",
-    "start:prod": "node dist/src/app.js"
-  }
-}
-```
-
-configure alias
+### configure alias
 
 ```
 npm i module-alias
@@ -315,7 +306,28 @@ add mappers in `jest.config.ts`
 }
 ```
 
-configure ci
+import `alias-config` in `app.ts`
+
+```ts
+import './config/alias-config'
+```
+
+case it doesn't work, import `alias-config` in `routes.ts` or in another file deeper into the tree
+
+### configure build
+
+create build scripts
+
+```json
+{
+  "scripts": {
+    "build": "tsc --build",
+    "start:prod": "node dist/src/app.js"
+  }
+}
+```
+
+### configure ci
 
 create `.github/workflows/ci.yml`
 
@@ -349,7 +361,13 @@ jobs:
         run: npm run build
 ```
 
-configure `dotenv`
+### configure env
+
+create `.env` file
+
+```
+PORT=3000
+```
 
 ```
 npm i -D dotenv
@@ -367,9 +385,12 @@ console.log(sum(1, 2))
 console.log(process.env.PORT)
 ```
 
+### ignore files in git
+
 create `.gitignore` and add
 
 ```
 node_modules
 .env
+dist
 ```
