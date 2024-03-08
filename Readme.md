@@ -370,7 +370,7 @@ PORT=3000
 ```
 
 ```
-npm i -D dotenv
+npm i dotenv
 ```
 
 **app.ts**
