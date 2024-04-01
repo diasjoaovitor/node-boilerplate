@@ -140,7 +140,7 @@ npm test sum.test.ts
 
 ### configure editor
 
-create `.editorconfig`
+add information about the `.editorconfig` extension
 
 ```yml
 root = true
