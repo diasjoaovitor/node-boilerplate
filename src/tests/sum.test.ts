@@ -1,4 +1,4 @@
-import { sum } from '.'
+import { sum } from '@/utils'
 
 describe('Sum', () => {
   it('Sum a and b', () => {
