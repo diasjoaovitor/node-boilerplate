@@ -1,21 +1,24 @@
 {
   "compilerOptions": {
-    "composite": true,
     "target": "ESNext",
+    "moduleDetection": "force",
     "module": "CommonJS",
-    "skipLibCheck": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "isolatedModules": true,
     "strict": true,
-    "outDir": "dist",
-    "removeComments": true,
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "removeComments": true,
     "sourceMap": true,
+    "newLine": "lf",
+    "outDir": "dist/src",
     "baseUrl": "src",
     "paths": {
       "@/*": ["*"]
     }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }
