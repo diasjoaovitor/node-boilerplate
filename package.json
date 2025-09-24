@@ -26,9 +26,6 @@
     "prettier:fix": "prettier --write .",
     "prepare": "husky"
   },
-  "dependencies": {
-    "dotenv": "^17.2.2"
-  },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@eslint/eslintrc": "github:eslint/eslintrc",
@@ -37,6 +34,7 @@
     "@types/node": "^24.5.2",
     "@typescript-eslint/parser": "^8.44.1",
     "commitlint-config-emoji-convention": "^1.0.3",
+    "dotenv": "^17.2.2",
     "eslint": "^9.36.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-simple-import-sort": "^12.1.1",
@@ -46,6 +44,7 @@
     "lint-staged": "^16.2.0",
     "prettier": "^3.6.2",
     "ts-jest": "^29.4.4",
+    "ts-node": "^10.9.2",
     "tsc-alias": "^1.8.16",
     "tsconfig-paths": "^4.2.0",
     "tsx": "^4.20.5",
